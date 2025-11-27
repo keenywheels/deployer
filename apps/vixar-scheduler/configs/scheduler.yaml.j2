@@ -1,5 +1,6 @@
 scheduler:
   cron_pattern: "{{ app.scheduler.cron_pattern }}"
+  workers_count: {{ app.scheduler.workers_count }}
   logger:
     loglvl: info
     mode: production

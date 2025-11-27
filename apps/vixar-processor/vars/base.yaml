@@ -2,13 +2,13 @@ app:
   name: vixar-processor
   image:
     name: daronenko/vixar-processor
-    tag: 2be5313e
+    tag: d42ce97d
   clients:
     llm:
       url: "http://sntmnt:9999"
       timeout: 1m
   processor:
-    workers_count: 10
+    workers_count: 2
     max_retries: 2
     retry_delay: 10s
   postgres:
