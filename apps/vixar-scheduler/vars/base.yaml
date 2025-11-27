@@ -1,8 +1,9 @@
 app:
   name: vixar-scheduler
+  workers_count: 1
   image:
     name: daronenko/vixar-scheduler
-    tag: e4df3582
+    tag: 37605a05
   port: 8009
   scheduler:
     cron_pattern: "30 23 * * *"

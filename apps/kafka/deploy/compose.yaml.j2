@@ -33,6 +33,7 @@ services:
     container_name: {{ app.kafka_ui.name }}
     image: {{ app.kafka_ui.image.name }}:{{ app.kafka_ui.image.tag }}
     restart: always
+    mem_limit: 512m
     depends_on:
       {{ app.kafka.name }}:
         condition: service_healthy
