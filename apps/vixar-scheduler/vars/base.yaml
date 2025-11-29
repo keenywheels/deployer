@@ -2,13 +2,13 @@ app:
   name: vixar-scheduler
   image:
     name: daronenko/vixar-scheduler
-    tag: 37605a05
-  port: 8009
+    tag: 815f34c6
   scheduler:
     cron_pattern: "30 23 * * *"
     workers_count: 1
   scraper:
     output_every: 10000
+    log_errors: false
     max_depth: 5
     filter_pattern: "^[A-Za-zА-Яа-яЁё]+$"
     tags_to_parse: ["div", "span", "p", "a", "h1", "h2", "h3", "h4", "h5", "h6"]
@@ -22,6 +22,13 @@ app:
       accept_language: "en-US,en;q=0.9"
       accept_encoding: "gzip, deflate, br, zstd"
       connection: "keep-alive"
+    queue:
+      enabled: true
+      thread_number: 5
+      max_size: 250000
+  system_server:
+    enabled: true
+    port: 8811
   kafka:
     max_retry: 5
     brokers:

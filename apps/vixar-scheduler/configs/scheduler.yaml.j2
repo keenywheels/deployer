@@ -5,8 +5,12 @@ scheduler:
     loglvl: info
     mode: production
     encoding: json
+  system_server:
+    enabled: {{ app.system_server.enabled }}
+    port: {{ app.system_server.port }}
   scraper:
     output_every: {{ app.scraper.output_every }}
+    log_errors: {{ app.scraper.log_errors }}
     max_depth: {{ app.scraper.max_depth }}
     filter_pattern: "{{ app.scraper.filter_pattern }}"
     tags_to_parse: {{ app.scraper.tags_to_parse }}
@@ -20,6 +24,10 @@ scheduler:
       Accept-Language: "{{ app.scraper.headers.accept_language }}"
       Accept-Encoding: "{{ app.scraper.headers.accept_encoding }}"
       Connection: "{{ app.scraper.headers.connection }}"
+    queue:
+      enabled: {{ app.scraper.queue.enabled }}
+      thread_number: {{ app.scraper.queue.thread_number }}
+      max_size: {{ app.scraper.queue.max_size }}
   sites:
 {% for site in app.sites %}
     - name: "{{ site.name }}"
