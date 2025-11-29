@@ -9,7 +9,7 @@ app:
   scraper:
     output_every: 10000
     log_errors: false
-    max_depth: 2
+    max_depth: 1
     filter_pattern: "^[A-Za-zА-Яа-яЁё]+$"
     tags_to_parse: ["div", "span", "p", "a", "h1", "h2", "h3", "h4", "h5", "h6"]
     is_async: false
