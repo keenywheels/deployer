@@ -2,14 +2,14 @@ app:
   name: vixar-scheduler
   image:
     name: daronenko/vixar-scheduler
-    tag: 0b453931
+    tag: 55a2721d
   scheduler:
     cron_pattern: "31 20 * * *"
     workers_count: 1
   scraper:
     output_every: 10000
     log_errors: false
-    max_depth: 1
+    max_depth: 2
     filter_pattern: "^[A-Za-zА-Яа-яЁё]+$"
     tags_to_parse: ["div", "span", "p", "a", "h1", "h2", "h3", "h4", "h5", "h6"]
     is_async: false
