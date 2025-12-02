@@ -2,4 +2,4 @@ app:
   name: vixar-frontend
   image:
     name: daronenko/vixar-frontend
-    tag: 0af9ab20
+    tag: e53af5a6
