@@ -10,7 +10,7 @@ app:
     allow_credentials: true
     max_age: 24h
   scheduler:
-    refresh_search_table_pattern: "0 8 * * *"
+    refresh_search_table_pattern: "15 03 * * *"
   postgres:
     host: postgres
     port: 5432

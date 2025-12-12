@@ -4,7 +4,7 @@ app:
     name: daronenko/vixar-scheduler
     tag: 55a2721d
   scheduler:
-    cron_pattern: "45 22 * * *"
+    cron_pattern: "15 00 * * *"
     workers_count: 2
   scraper:
     output_every: 10000
