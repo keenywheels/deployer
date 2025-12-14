@@ -14,9 +14,12 @@ services:
     networks:
       - {{ app.name }}-net
       - postgres-net
+      - redis-net
 
 networks:
   {{ app.name }}-net:
     external: true
   postgres-net:
+    external: true
+  redis-net:
     external: true

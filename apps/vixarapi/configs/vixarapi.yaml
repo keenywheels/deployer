@@ -1,4 +1,7 @@
 app:
+  service:
+    user:
+      session_secret: {{ app.service.user.session_secret }}
   http:
     port: {{ app.http.port }}
   cors:
@@ -11,6 +14,13 @@ app:
     encoding: json
   scheduler:
     refresh_search_table_pattern: {{ app.scheduler.refresh_search_table_pattern }}
+  vk:
+    http:
+      timeout: {{ app.vk.http.timeout }}
+    auth:
+      url: {{ app.vk.auth.url }}
+      client_id: {{ app.vk.auth.client_id }}
+    secret: {{ app.vk.secret }}
 
 postgres:
   host: {{ app.postgres.host }}
@@ -19,3 +29,8 @@ postgres:
   password: {{ app.postgres.password }}
   dbname: {{ app.postgres.dbname }}
   sslmode: {{ app.postgres.sslmode }}
+
+redis:
+  addr: {{ app.redis.addr }}
+  password: {{ app.redis.password }}
+  db: {{ app.redis.db }}

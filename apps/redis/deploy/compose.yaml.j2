@@ -1,0 +1,26 @@
+services:
+  {{ app.name }}:
+    container_name: {{ app.name }}
+    image: {{ app.image.name }}:{{ app.image.tag }}
+    hostname: {{ app.name }}
+    restart: always
+    mem_limit: 1g
+    ports:
+      - "{{ app.port }}:{{ app.port }}"
+    command: ["redis-server", "--requirepass", "{{ app.auth.password }}"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "{{ app.auth.password }}", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - redisdata:/data
+    networks:
+      - {{ app.name }}-net
+
+networks:
+  {{ app.name }}-net:
+    external: true
+
+volumes:
+  redisdata:
