@@ -2,7 +2,7 @@ app:
   name: vixarapi
   image:
     name: daronenko/vixarapi
-    tag: d42ce97d
+    tag: acf2c0ad
   http:
     port: "8000"
   cors:
@@ -11,6 +11,15 @@ app:
     max_age: 24h
   scheduler:
     refresh_search_table_pattern: "15 03 * * *"
+  vk:
+    http:
+      timeout: 5s
+    auth:
+      url: "https://id.vk.ru"
+      client_id: "54390662"
   postgres:
     host: postgres
     port: 5432
+  redis:
+    addr: redis:6379
+    db: 0
