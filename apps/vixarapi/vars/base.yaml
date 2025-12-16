@@ -2,7 +2,11 @@ app:
   name: vixarapi
   image:
     name: daronenko/vixarapi
-    tag: acf2c0ad
+    tag: ff9ee05e
+  cookie:
+    session:
+      name: "session_id"
+      expiration: 4320h
   http:
     port: "8000"
   cors:

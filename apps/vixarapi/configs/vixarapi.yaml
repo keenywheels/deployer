@@ -1,4 +1,8 @@
 app:
+  cookie:
+    session:
+      name: {{ app.cookie.session.name }}
+      expiration: {{ app.cookie.session.expiration }}
   service:
     user:
       session_secret: {{ app.service.user.session_secret }}
