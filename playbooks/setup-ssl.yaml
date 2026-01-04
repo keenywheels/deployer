@@ -8,8 +8,8 @@
       - vixar.tech
       - www.vixar.tech
     email: "dan.mironenko@gmail.com"
-    webroot_path: /opt/deploy/nginx/certbot
-    nginx_dir: /opt/deploy/nginx
+    webroot_path: /opt/apps/front-nginx/data/certbot
+    nginx_dir: /opt/apps/front-nginx/deploy
     nginx_service: front-nginx
 
   tasks:
@@ -35,14 +35,11 @@
         --webroot -w {{ webroot_path }}
         {% for d in domain_list %} -d {{ d }}{% endfor %}
         --non-interactive --agree-tos --email {{ email }}
-      register: certbot_result
-      changed_when: "'Congratulations' in certbot_result.stdout or 'Successfully' in certbot_result.stdout"
 
-    - name: reload nginx if certs changed
+    - name: restart nginx
       ansible.builtin.command:
         chdir: "{{ nginx_dir }}"
-        cmd: docker compose -f compose.yaml restart {{ nginx_service }}
-      when: certbot_result.changed
+        cmd: docker restart {{ nginx_service }}
 
     - name: setup certbot auto-renew
       ansible.builtin.cron:
@@ -52,5 +49,5 @@
         hour: "3"
         job: >
           certbot renew --quiet --post-hook
-          "docker compose -f {{ nginx_dir }}/compose.yaml restart {{ nginx_service }}"
+          "docker restart {{ nginx_service }}"
         state: present
