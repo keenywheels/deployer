@@ -32,6 +32,7 @@ scheduler:
 {% for site in app.sites %}
     - name: "{{ site.name }}"
       url: "{{ site.url }}"
+      category: "{{ site.category }}"
 {% endfor %}
 
 kafka:

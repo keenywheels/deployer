@@ -2,7 +2,7 @@ app:
   name: vixar-processor
   image:
     name: daronenko/vixar-processor
-    tag: d42ce97d
+    tag: 192698e8
   clients:
     llm:
       url: "http://sntmnt:9999"
