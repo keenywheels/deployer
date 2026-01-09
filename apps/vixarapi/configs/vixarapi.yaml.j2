@@ -38,3 +38,12 @@ redis:
   addr: {{ app.redis.addr }}
   password: {{ app.redis.password }}
   db: {{ app.redis.db }}
+
+kafka:
+  max_retry: {{ app.kafka.max_retry }}
+  brokers:
+{% for broker in app.kafka.brokers %}
+    - {{ broker }}
+{% endfor %}
+  topics:
+    notifications: "{{ app.kafka.topics.notifications }}"
