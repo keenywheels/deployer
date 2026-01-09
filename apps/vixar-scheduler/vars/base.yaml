@@ -2,7 +2,7 @@ app:
   name: vixar-scheduler
   image:
     name: daronenko/vixar-scheduler
-    tag: 55a2721d
+    tag: 8540d142
   scheduler:
     cron_pattern: "15 00 * * *"
     workers_count: 2
