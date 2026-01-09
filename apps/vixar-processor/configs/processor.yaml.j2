@@ -19,10 +19,16 @@ app:
     loglvl: info
     mode: production
     encoding: json
+  smtp:
+    host: {{ app.smtp.host }}
+    port: "{{ app.smtp.port }}"
+    username: {{ app.smtp.username }}
+    password: {{ app.smtp.password }}
 
 kafka:
   group_id: "{{ app.kafka.group_id }}"
   brokers:
     - {{ app.kafka.hostname }}:{{ app.kafka.port }}
   topics:
-    scraper_data: "{{ app.kafka.topic }}"
+    scraper_data: "{{ app.kafka.topics.scraper_data }}"
+    notifications: "{{ app.kafka.topics.notifications }}"

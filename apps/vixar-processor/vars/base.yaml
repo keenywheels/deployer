@@ -2,7 +2,7 @@ app:
   name: vixar-processor
   image:
     name: daronenko/vixar-processor
-    tag: 192698e8
+    tag: e664f82c
   clients:
     llm:
       url: "http://sntmnt:9999"
@@ -14,8 +14,13 @@ app:
   postgres:
     host: postgres
     port: 5432
+  smtp:
+    host: smtp.mail.ru
+    port: 587
   kafka:
     hostname: kafka
     port: 9093
     group_id: vixar_processor
-    topic: scraper_data
+    topics:
+      scraper_data: scraper_data
+      notifications: notifications

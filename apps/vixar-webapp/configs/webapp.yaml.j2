@@ -10,5 +10,5 @@ app:
     clients:
   {% for client in app.s2s.clients %}
     - name: "{{ client.name }}"
-        token: "{{ client.token }}"
+      token: "{{ client.token }}"
   {% endfor %}
