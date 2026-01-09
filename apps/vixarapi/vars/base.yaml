@@ -2,7 +2,7 @@ app:
   name: vixarapi
   image:
     name: daronenko/vixarapi
-    tag: 192698e8
+    tag: e664f82c
   cookie:
     session:
       name: "session_id"
@@ -27,3 +27,9 @@ app:
   redis:
     addr: redis:6379
     db: 0
+  kafka:
+    max_retry: 5
+    brokers:
+      - kafka:9093
+    topics:
+      notifications: "notifications"
