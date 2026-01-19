@@ -2,7 +2,7 @@ app:
   name: vixarapi
   image:
     name: daronenko/vixarapi
-    tag: e664f82c
+    tag: da15f8ff
   cookie:
     session:
       name: "session_id"
