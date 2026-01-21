@@ -3,4 +3,3 @@ app:
   image:
     name: redis
     tag: 8.4
-  port: 6379

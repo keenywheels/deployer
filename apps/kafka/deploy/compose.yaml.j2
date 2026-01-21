@@ -6,8 +6,6 @@ services:
     restart: always
     mem_limit: 4g
     cpus: 0.5
-    ports:
-      - {{ app.kafka.ports.exposed }}:{{ app.kafka.ports.exposed }}
     environment:
       CLUSTER_ID: {{ app.kafka.cluster_id }}
       KAFKA_NODE_ID: 1
