@@ -5,8 +5,6 @@ services:
     hostname: {{ app.postgres.name }}
     restart: always
     mem_limit: 1g
-    ports:
-      - "{{ app.postgres.port }}:{{ app.postgres.port }}"
     environment:
       POSTGRES_USER: {{ app.postgres.auth.user }}
       POSTGRES_PASSWORD: {{ app.postgres.auth.password }}
