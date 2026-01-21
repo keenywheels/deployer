@@ -7,6 +7,8 @@ app:
     session:
       name: "session_id"
       expiration: 4320h
+  http:
+    port: "8000"
   cors:
     allow_origins: ["https://vixar.tech"]
     allow_credentials: true
