@@ -8,7 +8,7 @@ app:
   s2s:
     header: {{ app.s2s.header }}
     clients:
-  {% for client in app.s2s.clients %}
+{% for client in app.s2s.clients %}
     - name: "{{ client.name }}"
       token: "{{ client.token }}"
-  {% endfor %}
+{% endfor %}
