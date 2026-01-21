@@ -4,8 +4,6 @@ services:
     container_name: {{ app.name }}
     restart: always
     mem_limit: 512m
-    ports:
-      - '3000:3000'
     networks:
       - {{ app.name }}-net
 

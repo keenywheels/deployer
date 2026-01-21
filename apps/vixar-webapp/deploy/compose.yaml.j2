@@ -4,8 +4,6 @@ services:
     container_name: {{ app.name }}
     restart: always
     mem_limit: 512m
-    ports:
-      - "{{ app.http.port }}:{{ app.http.port }}"
     volumes:
       - /opt/apps/{{ app.name }}/configs/webapp.yaml:/webapp/configs/webapp.yaml:ro
       - /var/log/{{ app.name }}:/{{ app.name }}/log

@@ -5,8 +5,6 @@ services:
     restart: always
     mem_limit: 2g
     cpus: 1
-    ports:
-      - "{{ app.system_server.port }}:{{ app.system_server.port }}"
     volumes:
       - /opt/apps/{{ app.name }}/configs/scheduler.yaml:/scheduler/configs/scheduler.yaml:ro
       - /var/log/{{ app.name }}:/{{ app.name }}/log
