@@ -35,8 +35,6 @@ services:
     depends_on:
       {{ app.kafka.name }}:
         condition: service_healthy
-    ports:
-      - {{ app.kafka_ui.port }}:{{ app.kafka_ui.port }}
     environment:
       SERVER_PORT: {{ app.kafka_ui.port }}
       KAFKA_CLUSTERS_0_NAME: local
